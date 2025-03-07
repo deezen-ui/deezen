@@ -33,11 +33,6 @@
     "serve": [
       "Composer\\Config::disableProcessTimeout",
       "@build",
-      "bunx concurrently \"vendor/bin/testbench serve\" \"bun dev\""
-    ],
-    "serve-win": [
-      "Composer\\Config::disableProcessTimeout",
-      "@build",
       "bunx --bun concurrently \"php vendor/bin/testbench serve\" \"bun dev\""
     ]
   }
