@@ -1,5 +1,25 @@
 @import "tailwindcss";
 
-@theme {
+/* @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *)); */
+
+:root {
+  --acme-primary: #0a62fa;
+  --acme-primary-dark: #044ac4;
+  --acme-secondary: #1e2939;
+  --acme-secondary-dark: #364153;
+  --acme-danger: #dc2626;
+  --acme-danger-dark: #ab1b1b;
+}
+
+/* [data-theme="dark"] {
+
+} */
+
+@theme inline {
   --font-inter: "Inter", sans-serif;
+  --color-primary: var(--acme-primary);
+  --color-primary-dark: var(--acme-primary-dark);
+  --color-secondary: var(--acme-secondary);
+  --color-secondary-dark: var(--acme-secondary-dark);
+  --color-danger: var(--acme-danger);
 }
