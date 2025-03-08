@@ -7,6 +7,10 @@
   --acme-primary-dark: #044ac4;
   --acme-secondary: #1e2939;
   --acme-secondary-dark: #364153;
+  --acme-warning: #f59e0b;
+  --acme-warning-dark: #d97706;
+  --acme-success: #16a34a;
+  --acme-success-dark: #15803d;
   --acme-danger: #dc2626;
   --acme-danger-dark: #ab1b1b;
 }
@@ -17,9 +21,15 @@
 
 @theme inline {
   --font-inter: "Inter", sans-serif;
+
   --color-primary: var(--acme-primary);
   --color-primary-dark: var(--acme-primary-dark);
   --color-secondary: var(--acme-secondary);
   --color-secondary-dark: var(--acme-secondary-dark);
+  --color-warning: var(--acme-warning);
+  --color-warning-dark: var(--acme-warning-dark);
+  --color-success: var(--acme-success);
+  --color-success-dark: var(--acme-success-dark);
   --color-danger: var(--acme-danger);
+  --color-danger-dark: var(--acme-danger-dark);
 }

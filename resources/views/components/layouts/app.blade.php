@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme>
+<html lang="en" >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="http://localhost:5173/css/deezen.css">
 </head>
-<body class="font-inter ">
+<body class="font-inter dark:bg-gray-950 bg-slate-50">
     {{ $slot }}
 
     <script type="module" src="http://localhost:5173/js/app.js"></script>
