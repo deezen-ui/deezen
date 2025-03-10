@@ -16,7 +16,7 @@ class AddComponentCommand extends Command
     {
         parent::__construct();
 
-        $deezenPath = str_replace('/src/Commands', '', __DIR__);
+        $deezenPath = str_replace(PathUtil::changeSeparator('/src/Commands'), '', __DIR__);
 
         $this->deezenViewPath = "$deezenPath/resources/views/";
         $this->destViewPath = PathUtil::resourcePath() . '/views/components/';
