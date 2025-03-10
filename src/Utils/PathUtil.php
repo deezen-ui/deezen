@@ -15,4 +15,9 @@ class PathUtil
     {
         self::$resourcePath = $path;
     }
+
+    public static function changeSeparator(string $path): string
+    {
+        return str_replace('/', DIRECTORY_SEPARATOR, $path);
+    }
 }
