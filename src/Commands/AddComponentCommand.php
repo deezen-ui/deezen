@@ -47,6 +47,11 @@ class AddComponentCommand extends Command
             "{$this->destViewPath}/{$component}.blade.php"
         );
 
+        if (is_file($destPath)) {
+            $this->comment("Component '{$component}' already exist 😼");
+            return;
+        }
+
         preg_match_all('/<x-(?!slot\b)([\w.-]+)(?=\s|>)/', file_get_contents($compPath), $comps);
         array_map(fn($comp) =>  $this->place($comp), $comps[1]);
 
