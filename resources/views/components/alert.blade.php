@@ -1,7 +1,7 @@
 @props(['type' => 'info', 'variant' => 'solid', 'icon' => null])
 
 @php
-    $baseClass = "p-3 flex font-semibold items-center rounded-md focus:outline-none transition cursor-pointer";
+    $baseClass = "p-2 flex font-semibold items-center rounded-md focus:outline-none transition cursor-pointer";
     
     $colors = [
         'info' => [
