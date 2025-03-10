@@ -30,12 +30,13 @@ class AddComponentCommand extends Command
         $component = $this->argument('comp');
         $path = $this->deezenViewPath . "components/{$component}.blade.php";
 
-        $this->place($path);
+        $this->place(PathUtil::changeSeparator($path));
         $this->info('Component added successfully!');
     }
 
     private function place(string $component): void
     {
-        copy($component, $this->destViewPath . basename($component));
+        $destPath = PathUtil::changeSeparator($this->destViewPath . basename($component));
+        copy($component, $destPath);
     }
 }
