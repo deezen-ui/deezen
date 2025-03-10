@@ -12,8 +12,8 @@
     </div>
     <div 
         x-cloak
-        x-show="isExpanded"
-        class="pr-3 pb-3 text-sm text-gray-400"
+        class="transition-all pr-3 text-sm text-gray-400 overflow-hidden cursor-text"
+        x-bind:class="isExpanded ? 'h-auto pb-3' : 'h-0 pb-0'"
         x-collapse
     >
         <p>{{ $content }}</p>
@@ -31,8 +31,8 @@
     </div>
     <div 
         x-cloak
-        x-show="singleAccordionItem === '{{ $id }}'"
-        class="pr-3 pb-3 text-sm text-gray-400"
+        class="transition-all pr-3 text-sm text-gray-400 overflow-hidden cursor-text"
+        x-bind:class="singleAccordionItem === '{{ $id }}' ? 'h-auto pb-3' : 'h-0 pb-0'"
         x-collapse
     >
         <div>

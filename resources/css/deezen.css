@@ -19,6 +19,11 @@
 
 } */
 
+::selection {
+  background-color: var(--acme-primary);
+  color: white;
+}
+
 @theme inline {
   --font-inter: "Inter", sans-serif;
 

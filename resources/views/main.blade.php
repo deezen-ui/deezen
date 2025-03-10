@@ -1,5 +1,5 @@
 <x-layouts.app>
-    <div x-data="{ counter: 0 }" class="min-h-screen w-full flex flex-col justify-center items-center relative gap-5 ">
+    <div x-data="{ counter: 0 }" class="min-h-screen w-full flex flex-col justify-center items-center text-center p-5 relative gap-5 ">
         <div class="absolute -mt-[20rem] z-20 w-[200px] p-5 blur-2xl transform rotate-12 bg-gradient-to-r from-blue-500 to-red-500 dark:from-blue-800 dark:to-red-800"></div>
        <div class="flex flex-col gap-5 items-center space-x-4">
         <div class="flex gap-10 ">
