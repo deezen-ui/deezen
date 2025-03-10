@@ -19,24 +19,41 @@ class AddComponentCommand extends Command
         $deezenPath = str_replace(PathUtil::changeSeparator('/src/Commands'), '', __DIR__);
 
         $this->deezenViewPath = "$deezenPath/resources/views/";
-        $this->destViewPath = PathUtil::resourcePath() . '/views/components/';
+        $this->destViewPath = PathUtil::resourcePath() . '/views/components';
     }
 
     public function handle()
     {
-        if (!is_dir($this->destViewPath))
-            mkdir($this->destViewPath);
-
         $component = $this->argument('comp');
-        $path = $this->deezenViewPath . "components/{$component}.blade.php";
 
-        $this->place(PathUtil::changeSeparator($path));
-        $this->info('Component added successfully!');
+        $this->place($component);
     }
 
     private function place(string $component): void
     {
-        $destPath = PathUtil::changeSeparator($this->destViewPath . basename($component));
-        copy($component, $destPath);
+        $component = str_replace('.', '/', $component);
+        // Base component path
+        $compPath = PathUtil::changeSeparator(
+            $this->deezenViewPath . "components/{$component}.blade.php"
+        );
+
+        if (!is_file($compPath)) {
+            $this->error("Component '{$component}' not found!");
+            return;
+        }
+
+        // Destination to write
+        $destPath = PathUtil::changeSeparator(
+            "{$this->destViewPath}/{$component}.blade.php"
+        );
+
+        preg_match_all('/<x-(?!slot\b)([\w.-]+)(?=\s|>)/', file_get_contents($compPath), $comps);
+        array_map(fn($comp) =>  $this->place($comp), $comps[1]);
+
+        if (!is_dir($this->destViewPath))
+            mkdir(directory: dirname($destPath), recursive: true);
+
+        copy($compPath, $destPath);
+        $this->info("'{$component}' added successfully ✨");
     }
 }
