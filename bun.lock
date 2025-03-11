@@ -4,6 +4,7 @@
     "": {
       "name": "@deezen-ui/deezen",
       "dependencies": {
+        "@alpinejs/collapse": "^3.14.8",
         "alpinejs": "^3.14.8",
         "iconify-icon": "^2.3.0",
       },
@@ -15,6 +16,8 @@
     },
   },
   "packages": {
+    "@alpinejs/collapse": ["@alpinejs/collapse@3.14.8", "", {}, "sha512-dGlYLgqKemTcCGZJBTroShK0sEM6ZZsX4z5oeTppjJfZOlXKTn7UJF2CzCcGX/RhZRr6RuX0EU/bL+UJushYpw=="],
+
     "@esbuild/aix-ppc64": ["@esbuild/aix-ppc64@0.25.0", "", { "os": "aix", "cpu": "ppc64" }, "sha512-O7vun9Sf8DFjH2UtqK8Ku3LkquL9SZL8OLY1T5NZkA34+wG3OQF7cl4Ql8vdNzM6fzBbYfLaiRLIOZ+2FOCgBQ=="],
 
     "@esbuild/android-arm": ["@esbuild/android-arm@0.25.0", "", { "os": "android", "cpu": "arm" }, "sha512-PTyWCYYiU0+1eJKmw21lWtC+d08JDZPQ5g+kFyxP0V+es6VPPSUhM6zk8iImp2jbV6GwjX4pap0JFbUQN65X1g=="],
