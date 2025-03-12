@@ -1,3 +1,5 @@
+{{-- @uses('accordion.item')  --}}
+
 @props(['mode' => 'single'])
 
 <div x-data="{  
