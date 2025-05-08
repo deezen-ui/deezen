@@ -14,7 +14,11 @@
 </head>
 <body class="font-inter dark:bg-gray-950 bg-slate-50">
     {{ $slot }}
-
+    @if(request()->is('dev'))
+        <button class="fixed bottom-5 right-5 bg-primary px-4 py-4 shadow shadow-blue-400 flex items-center justify-center rounded-full" x-on:click="() => { window.open('https://github.com/irsyadulibad/deezen-ui', '_blank'); }">
+            <iconify-icon icon="heroicons-solid:chevron-double-up" class="text-white"></iconify-icon>
+        </button>
+    @endif
     <script type="module" src="http://localhost:5173/js/app.js"></script>
 </body>
 </html>

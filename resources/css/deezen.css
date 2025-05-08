@@ -38,3 +38,6 @@
   --color-danger: var(--acme-danger);
   --color-danger-dark: var(--acme-danger-dark);
 }
+button {
+  @apply cursor-pointer;
+}
